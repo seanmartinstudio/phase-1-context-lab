@@ -21,9 +21,20 @@ function createEmployeeRecord(employee) {
 }
 
 function createEmployeeRecords(array) {
+return array.map(employee => createEmployeeRecord(employee))
+}
 
-newArray = array.forEach(element => createEmployeeRecord(element))
-console.log("newArray =>", newArray)
+function createTimeInEvent(dateStamp) {
+let [date, hour] = dateStamp.split(" ")
+
+let eventObj = {
+    type: "TimeIn",
+    hour: parseInt(hour, 10),
+    date
+}
+
+this.timeInEvents.push(eventObj)
+return this
 }
 
 const allWagesFor = function () {
